@@ -5,16 +5,19 @@ import backend
 # Help mode: Displays available commands and their usage
 def help_mode():
     print("\n--- COMMANDS ---")
-    print(
-        "[-] view <query: optional> <sort: optional> - List laptops with optional search query and sorting"
-    )
+    print("[-] view <query: optional> <sort: optional> - List laptops with search query and sorting")
+    print("    | EXAMPLE USAGE:")
+    print("    | >> view - View laptops with default settings")
+    print("    | >> view asus rog - View laptops with 'asus rog' in the title")
+    print("    | >> view asus rog SORT_PRICE_LOW_TO_HIGH - View laptops with 'asus rog' sorted by price")
+    print("    | >> view SORT_BEST_SELLERS - View laptops sorted by best sellers")
     print("[-] sort - View the sorting types available")
     print("[-] help - Show this help message")
     print("[-] exit | quit - Exit the program")
     print("----------------\n")
 
 
-# View mode: Displays laptops with optional sorting, and allows pagination
+# View mode: Displays laptops with optional sorting, searching, and pagination
 def view_mode(command: str):
     cmds = command.split(" ")
     page = 1
